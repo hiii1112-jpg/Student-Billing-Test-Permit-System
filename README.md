@@ -2,85 +2,55 @@ Student Billing & Test Permit System
 
 A web-based school billing and examination clearance system developed using Laravel. The system helps manage student records, semester billing, payment transactions, and examination clearance in one application. It allows students and school staff to check and manage billing and clearance information more easily.
 
-What the System Does
-
+What the System Does?
 The system connects a student's payment status to their examination eligibility for each exam period.
 
 It uses three clearance statuses:
-
 Green: The required charges for the exam period have been paid.
-
 Yellow: The student has an active promissory note and is allowed to take the exam until the due date.
-
 Red: The student still has an unpaid balance and does not have a valid promissory note.
 
 The system also manages payment records, payment allocations, receipts, promissory notes, exam records, notifications, and activity logs based on each student's school term.
 
 User Roles
-
 The system has five user roles:
 
 Registrar – Manages student records, staff accounts, programs, blocks, subjects, school terms, teacher loads, student imports, and account activation codes.
-
 Head Cashier – Has access to cashier features, reports, payment voiding, and student account holds.
-
 Cashier / Student Assistant – Searches student accounts, views payment ledgers, records cash payments, issues receipts, and processes promissory notes.
-
 Teacher – Manages assigned class loads, views student rosters, and records exam attendance and clearance-related exam statuses.
-
 Student – Activates an account, checks billing and clearance status, submits payment records through the available payment channels, and views statements of account, receipts, and eligible exam permits.
-
 The Head Cashier and Cashier / Student Assistant use the cashier module but have different permissions.
 
 Main Features
-
 Separate dashboards and pages based on user roles
-
 Student account activation using a Certificate of Enrollment (COE) code
-
 Student record management and CSV import
-
 Semester-based billing divided into four payment periods
-
 Cash payment recording
-
 GCash, Maya, and bank payment channel selection and recording
-
 Payment allocation across billing periods
-
 Official receipt generation
-
 Promissory note management
-
 Examination clearance checking
-
 Class offerings, teacher loads, and student rosters
-
 Exam attendance and exam records
-
 Student statements of account and receipts
-
 Student notifications and exam permits
-
 Clearance monitoring and audit logs
-
 Maintenance settings and cashier reports
 
 Payment Note: The system does not have a live connection to GCash, Maya, or any bank. These options are only used to record the selected payment channel in the system. It does not process actual online transactions or require a reference number or proof of payment upload.
 
 Cashier Dashboard
-
 The Cashier Dashboard helps cashiers monitor payment records, daily collections, and active promissory notes.
-
 The dashboard refreshes automatically every 30 seconds to keep the displayed information updated.
 
 It has three main sections:
 
 Overview – Shows the total amount collected today, the number of payments recorded, active promissory notes, and a shortcut to the clearance monitor.
-
 Recent Payments – Displays the 15 most recent payment records, including the date, student name, amount, payment channel, receipt number, and payment status. Cashiers can open a student's ledger or view a receipt from this section.
-
-Promissory Notes – Shows active promissory notes and their due dates. Overdue notes are highlighted, and cashiers can cancel an active note when necessary.
+Prommssory Notes – Shows active promissory notes and their due dates. Overdue notes are highlighted, and cashiers can cancel an active note when necessary.
 
 The Head Cashier also has permission to void verified payments. A reason is required when voiding a payment, and the record is kept for tracking purposes. Regular Cashier / Student Assistant accounts do not have this permission.
 
@@ -96,7 +66,6 @@ Technology Used
 6.Tailwind CSS
 
 Local Setup
-
 Run the following commands in PowerShell from the project directory:
 
 composer install
@@ -139,14 +108,11 @@ To run the application's automated tests, use:
 
 php artisan test
 
-Challenges I Faced
+Challenges We Faced
 
 Connecting billing and examination clearance: Making sure that payment status, billing periods, promissory notes, and exam eligibility work together was one of the challenging parts.
-
 Managing different user roles: Each user has different responsibilities and permissions, so I had to make sure that users could only access the features allowed for their roles.
-
 Keeping records organized: Payment records, receipts, student accounts, school terms, and exam records are connected. I had to check that updates in one part of the system did not cause problems in another.
-
 Testing the complete process: I needed to check the system from account activation up to payment recording and examination clearance, instead of testing each page separately.
 
 Learning and fixing errors: Developing the system required learning more about Laravel routes, controllers, models, migrations, and Blade views. I also had to spend time debugging and improving the features.
@@ -156,13 +122,9 @@ Lessons Learned
 It is important to understand the system requirements before starting development.
 
 User roles and permissions should be planned carefully.
-
 Proper database relationships help keep records organized.
-
 Input validation is important, especially when handling student and payment information.
-
 Testing the complete workflow helps find problems that may not appear when checking individual pages.
-
 Building a system takes patience, research, and repeated improvements.
 
 Team Roles and My Contribution
